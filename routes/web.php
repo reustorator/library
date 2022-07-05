@@ -14,5 +14,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('list-materials');
+});
+Route::get('list-materials', function () {
+    return view('list-materials');
+});
+Route::get('create-category', function () {
+    return view('create-category');
+});
+Route::get('create-material', function () {
+    return view('create-material');
+});
+Route::get('create-tag', function () {
+    return view('create-tag');
+});
+Route::get('list-tag', function () {
+    return view('list-tag');
+});
+Route::get('list-category', function () {
+    return view('list-category');
+});
+Route::get('view-materials', function () {
+    return view('view-materials');
 });

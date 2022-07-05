@@ -7,9 +7,17 @@
 
     <!-- Bootstrap CSS -->
 
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-utilities.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/bootstrap.rtl.css">
+    <link rel="stylesheet" href="../css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../css/bootstrap-grid.rtl.css">
+    <link rel="stylesheet" href="../css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="../css/bootstrap-reboot.rtl.css">
+    <link rel="stylesheet" href="../css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="../css/bootstrap-utilities.rtl.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 
     <title>Материалы</title>
 </head>
@@ -26,13 +34,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Материалы</a>
+                            <a class="nav-link active" aria-current="page" href="list-materials">Материалы</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Теги</a>
+                            <a class="nav-link" href="list-tag">Теги</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Категории</a>
+                            <a class="nav-link" href="list-category">Категории</a>
                         </li>
                     </ul>
                 </div>
@@ -40,7 +48,7 @@
         </nav>
         <div class="container">
             <h1 class="my-md-5 my-4">Материалы</h1>
-            <a class="btn btn-primary mb-4" href="#" role="button">Добавить</a>
+            <a class="btn btn-primary mb-4" href="create-material" role="button">Добавить</a>
             <div class="row">
                 <div class="col-md-8">
                     <form>
@@ -127,6 +135,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
+<script src="../js/app.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script src="../js/bootstrap.esm.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
 
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 
