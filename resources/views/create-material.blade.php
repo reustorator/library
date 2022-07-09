@@ -6,15 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/app.css">
-    <link rel="stylesheet" href="../css/bootstrap.rtl.css">
-    <link rel="stylesheet" href="../css/bootstrap-grid.css">
-    <link rel="stylesheet" href="../css/bootstrap-grid.rtl.css">
-    <link rel="stylesheet" href="../css/bootstrap-reboot.css">
-    <link rel="stylesheet" href="../css/bootstrap-reboot.rtl.css">
-    <link rel="stylesheet" href="../css/bootstrap-utilities.css">
-    <link rel="stylesheet" href="../css/bootstrap-utilities.rtl.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Материалы</title>
@@ -48,16 +39,17 @@
             <h1 class="my-md-5 my-4">Добавить материал</h1>
             <div class="row">
                 <div class="col-lg-5 col-md-8">
-                    <form>
+                    <form action="post-material" method ="post">
+                        @csrf
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelectType">
+                            <select class="form-select" id="floatingSelectType" name="type">
                                 <option selected>Выберите тип</option>
-                                <option value="0">Книга</option>
-                                <option value="1">Статья</option>
-                                <option value="2">Видео</option>
-                                <option value="3">Сайт/Блог</option>
-                                <option value="3">Подборка</option>
-                                <option value="3">Ключевые идеи книги</option>
+                                <option value="Книга">Книга</option>
+                                <option value="Статья">Статья</option>
+                                <option value="Видео">Видео</option>
+                                <option value="Сайт/Блог">Сайт/Блог</option>
+                                <option value="Подборка">Подборка</option>
+                                <option value="Ключевые идеи книги">Ключевые идеи книги</option>
                             </select>
                             <label for="floatingSelectType">Тип</label>
                             <div class="invalid-feedback">
@@ -65,21 +57,21 @@
                             </div>
                         </div>
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelectCategory">
+                            <select class="form-select" id="floatingSelectCategory" name="category">
                                 <option selected>Выберите категорию</option>
-                                <option value="0">Деловые/Бизнес-процессы</option>
-                                <option value="1">Деловые/Найм</option>
-                                <option value="2">Деловые/Реклама</option>
-                                <option value="3">Деловые/Управление бизнесом</option>
-                                <option value="4">Деловые/Управление людьми</option>
-                                <option value="5">Деловые/Управление проектами</option>
-                                <option value="6">Детские/Воспитание</option>
-                                <option value="7">Дизайн/Общее</option>
-                                <option value="8">Дизайн/Logo</option>
-                                <option value="9">Дизайн/Web дизайн</option>
-                                <option value="10">Разработка/PHP</option>
-                                <option value="11">Разработка/HTML и CSS</option>
-                                <option value="12">Разработка/Проектирование</option>
+                                <option value="Деловые/Бизнес-процессы">Деловые/Бизнес-процессы</option>
+                                <option value="Деловые/Найм">Деловые/Найм</option>
+                                <option value="Деловые/Реклама">Деловые/Реклама</option>
+                                <option value="Деловые/Управление бизнесом">Деловые/Управление бизнесом</option>
+                                <option value="Деловые/Управление людьми">Деловые/Управление людьми</option>
+                                <option value="Деловые/Управление проектами">Деловые/Управление проектами</option>
+                                <option value="Детские/Воспитание">Детские/Воспитание</option>
+                                <option value="Дизайн/Общее">Дизайн/Общее</option>
+                                <option value="Дизайн/Logo">Дизайн/Logo</option>
+                                <option value="Дизайн/Web дизайн">Дизайн/Web дизайн</option>
+                                <option value="Разработка/PHP">Разработка/PHP</option>
+                                <option value="Разработка/HTML и CSS">Разработка/HTML и CSS</option>
+                                <option value="Разработка/Проектирование">Разработка/Проектирование</option>
                             </select>
                             <label for="floatingSelectCategory">Категория</label>
                             <div class="invalid-feedback">
@@ -87,23 +79,15 @@
                             </div>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" placeholder="Напишите название" id="floatingName">
+                            <input type="text" class="form-control" placeholder="Напишите название" id="floatingName" name="name">
                             <label for="floatingName">Название</label>
                             <div class="invalid-feedback">
                                 Пожалуйста, заполните поле
                             </div>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" placeholder="Напишите авторов" id="floatingAuthor">
+                            <input type="text" class="form-control" placeholder="Напишите авторов" id="floatingAuthor" name="author">
                             <label for="floatingAuthor">Авторы</label>
-                            <div class="invalid-feedback">
-                                Пожалуйста, заполните поле
-                            </div>
-                        </div>
-                        <div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Напишите краткое описание" id="floatingDescription"
-                              style="height: 100px"></textarea>
-                            <label for="floatingDescription">Описание</label>
                             <div class="invalid-feedback">
                                 Пожалуйста, заполните поле
                             </div>

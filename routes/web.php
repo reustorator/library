@@ -22,9 +22,6 @@ Route::get('list-materials', function () {
 Route::get('create-category', function () {
     return view('create-category');
 });
-Route::get('create-material', function () {
-    return view('create-material');
-});
 Route::get('create-tag', function () {
     return view('create-tag');
 });
@@ -37,3 +34,5 @@ Route::get('list-category', function () {
 Route::get('view-materials', function () {
     return view('view-materials');
 });
+Route::get('create-material','App\Http\Controllers\CreateMaterialController@index');
+Route::post('post-material','App\Http\Controllers\CreateMaterialController@insertMaterial');
