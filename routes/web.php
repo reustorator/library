@@ -36,3 +36,4 @@ Route::get('view-materials', function () {
 });
 Route::get('create-material','App\Http\Controllers\CreateMaterialController@index');
 Route::post('post-material','App\Http\Controllers\CreateMaterialController@insertMaterial');
+Route::get('list-materials','App\Http\Controllers\MaterialsController@index');
