@@ -41,11 +41,12 @@
             <a class="btn btn-primary mb-4" href="create-material" role="button">Добавить</a>
             <div class="row">
                 <div class="col-md-8">
-                    <form>
+                    <form action="postSearch" method ="post">
+                        @csrf
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder=""
-                                   aria-label="Example text with button addon" aria-describedby="button-addon1">
-                            <button class="btn btn-primary" type="button" id="button-addon1">Искать</button>
+                                   aria-label="Example text with button addon" aria-describedby="button-addon1" name="postSearch">
+                            <button class="btn btn-primary" type="submit" id="button-addon1">Искать</button>
                         </div>
                     </form>
                 </div>
