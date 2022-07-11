@@ -21,9 +21,6 @@ class Materials extends Model
         return $this->hasMany('Post');
     }
 
-    public function searchMaterials($search){
-        return $this->search($search)->get();
-    }
     public function post()
     {
         return $this->belongsTo('App\Post');
