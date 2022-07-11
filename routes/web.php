@@ -34,6 +34,7 @@ Route::get('list-category', function () {
 Route::get('view-materials', function () {
     return view('view-materials');
 });
-Route::get('create-material','App\Http\Controllers\CreateMaterialController@index');
-Route::post('post-material','App\Http\Controllers\CreateMaterialController@insertMaterial');
+Route::get('create-material','App\Http\Controllers\MaterialsController@createView');
+Route::post('post-material','App\Http\Controllers\MaterialsController@insertMaterial');
 Route::get('list-materials','App\Http\Controllers\MaterialsController@index');
+Route::post('materialsSearch','App\Http\Controllers\MaterialsController@materialsSearch');
