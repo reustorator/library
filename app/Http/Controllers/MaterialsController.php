@@ -33,12 +33,4 @@ class MaterialsController extends Controller
 
 
     }
-    /*public function search()
-    {
-        $request->ajax();
-        $output = "";
-        $materials = DB::table('materials')->where('name', 'author', 'type', 'category', 'LIKE', '%' . $request->search . "%")->get();
-
-        return view('list-materials', ['materials' => $materials]);
-    }*/
 }
