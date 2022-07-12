@@ -19,9 +19,12 @@ class MaterialsController extends Controller
         return view('list-materials', ['materials' => $materials]);
     }
 
+    /**
+     * Поиск по пользователям
+     */
     public function materialsSearch(Request $request)
     {
-        $value = $request->get('postSearch');
+        $value = $request->get('materialsSearch');
         $columns = [
             'name',
             'author',
@@ -36,7 +39,9 @@ class MaterialsController extends Controller
     public function createView(){
         return view('create-material');
     }
-
+    /**
+     * Добавление материала
+     */
     public function insertMaterial(Request $request)
     {
         $this->validate($request,[
@@ -50,7 +55,6 @@ class MaterialsController extends Controller
         else {
             $author = '.';
         }
-
         Materials::create([
             'name' =>  $request->name,
             'author' => $author,
@@ -59,7 +63,22 @@ class MaterialsController extends Controller
             'created_at' => $request->created_at,
             'update_at' => $request->updated_at,
         ]);
-
         return redirect('list-materials')->with('status', 'Материал добавлен');
+    }
+    /**
+     * Редактирование материала
+     */
+    public function showUpdate($id) {
+        $materials = DB::table('materials where id = ?',[$id])->get();
+        return view('update-material', ['materials' => $materials]);
+    }
+    public function edit(Request $request,$id) {
+        $name = $request->name;
+        $author = $request->author;
+        $type = $request->type;
+        $category = $request->category;
+
+        DB::update('update student set name = ?, author = ?, type = ?, category = ?, where id = ?',[$name,$author,$type,$category,$id]);
+        return redirect('list-materials')->with('status', 'Материал обновлен');
     }
 }

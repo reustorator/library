@@ -38,3 +38,5 @@ Route::get('create-material','App\Http\Controllers\MaterialsController@createVie
 Route::post('post-material','App\Http\Controllers\MaterialsController@insertMaterial');
 Route::get('list-materials','App\Http\Controllers\MaterialsController@index');
 Route::post('materialsSearch','App\Http\Controllers\MaterialsController@materialsSearch');
+Route::get('edit/{id}','App\Http\Controllers\MaterialsController@showUpdate');
+Route::post('edit/{id}','App\Http\Controllers\MaterialsController@edit');
