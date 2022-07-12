@@ -44,10 +44,16 @@ class MaterialsController extends Controller
             'type' => 'required',
             'category' => 'required'
         ]);
+        if($request->author != null){
+            $author = $request->author;
+        }
+        else {
+            $author = '.';
+        }
 
         Materials::create([
             'name' =>  $request->name,
-            'author' => $request->author || '',
+            'author' => $author,
             'type' => $request->type,
             'category' => $request->category,
             'created_at' => $request->created_at,

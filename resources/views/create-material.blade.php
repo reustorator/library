@@ -39,7 +39,7 @@
             <h1 class="my-md-5 my-4">Добавить материал</h1>
             <div class="row">
                 <div class="col-lg-5 col-md-8">
-                    <form action="post-material" method ="post">
+                    <form action="insertMaterial" method ="post">
                         @csrf
                         <div class="form-floating mb-3">
                             <select class="form-select" id="floatingSelectType" name="type" required>
