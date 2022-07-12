@@ -15,6 +15,10 @@ class CreateMaterialsTable extends Migration
     {
         Schema::create('materials', function (Blueprint $table) {
             $table->id();
+            $table->char('name',255);
+            $table->char('author',255);
+            $table->char('type',255);
+            $table->char('category',255);
             $table->fullText(['name','author','type','category'], 'FULLTEXT')->charset('utf8mb4_general_ci');
             $table->date('created_at');
             $table->date('updated_at');
