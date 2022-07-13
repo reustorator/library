@@ -35,9 +35,10 @@ Route::get('view-materials', function () {
     return view('view-materials');
 });
 Route::get('create-material',[MaterialsController::class, 'createView']);
-Route::post('post-material',[MaterialsController::class, 'insertMaterial']);
+Route::post('insertMaterial',[MaterialsController::class, 'insertMaterial']);
 Route::get('list-materials',[MaterialsController::class, 'index']);
 Route::post('materialsSearch',[MaterialsController::class, 'materialsSearch']);
 Route::get('edit-material/{id}',[MaterialsController::class, 'showUpdate']);
 Route::post('update-material/{id}', [MaterialsController::class, 'update']);
 Route::get('delete-material/{id}', [MaterialsController::class, 'destroy']);
+Route::get('view-material/{id}', [MaterialsController::class, 'viewMaterial']);

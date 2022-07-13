@@ -93,6 +93,13 @@
                                 Пожалуйста, заполните поле
                             </div>
                         </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" placeholder="Напишите описание" id="floatingAuthor" name="description" value="<?php echo $materials->description; ?>" required>
+                            <label for="floatingAuthor">Описание</label>
+                            <div class="invalid-feedback">
+                                Пожалуйста, заполните поле
+                            </div>
+                        </div>
                         <button class="btn btn-primary" type="submit">Обновить</button>
                     </form>
                 </div>

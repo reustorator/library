@@ -6,17 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/app.css">
-    <link rel="stylesheet" href="../css/bootstrap.rtl.css">
-    <link rel="stylesheet" href="../css/bootstrap-grid.css">
-    <link rel="stylesheet" href="../css/bootstrap-grid.rtl.css">
-    <link rel="stylesheet" href="../css/bootstrap-reboot.css">
-    <link rel="stylesheet" href="../css/bootstrap-reboot.rtl.css">
-    <link rel="stylesheet" href="../css/bootstrap-utilities.css">
-    <link rel="stylesheet" href="../css/bootstrap-utilities.rtl.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/d  ist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Материалы</title>
 </head>
@@ -33,37 +23,37 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="list-materials">Материалы</a>
+                            <a class="nav-link active" aria-current="page" href="../list-materials">Материалы</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="list-tag">Теги</a>
+                            <a class="nav-link" href="../list-tag">Теги</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="list-category">Категории</a>
+                            <a class="nav-link" href="../list-category">Категории</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="container">
-            <h1 class="my-md-5 my-4">Путь джедая</h1>
+            <h1 class="my-md-5 my-4">{{ $materials->name }}</h1>
             <div class="row mb-3">
                 <div class="col-lg-6 col-md-8">
                     <div class="d-flex text-break">
                         <p class="col fw-bold mw-25 mw-sm-30 me-2">Авторы</p>
-                        <p class="col">Максим Дорофеев</p>
+                        <p class="col">{{ $materials->author }}</p>
                     </div>
                     <div class="d-flex text-break">
                         <p class="col fw-bold mw-25 mw-sm-30 me-2">Тип</p>
-                        <p class="col">Книга</p>
+                        <p class="col">{{ $materials->type }}</p>
                     </div>
                     <div class="d-flex text-break">
                         <p class="col fw-bold mw-25 mw-sm-30 me-2">Категория</p>
-                        <p class="col">Саморазвитие / Личная эффективность</p>
+                        <p class="col">{{ $materials->category }}</p>
                     </div>
                     <div class="d-flex text-break">
                         <p class="col fw-bold mw-25 mw-sm-30 me-2">Описание</p>
-                        <p class="col">Почитать стоит для чиного роста</p>
+                        <p class="col">{{ $materials->description }}</p>
                     </div>
                 </div>
             </div>

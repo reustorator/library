@@ -14,7 +14,8 @@ class Materials extends Model
         'name',
         'author',
         'type',
-        'category'
+        'category',
+        'description'
         ];
 
     public function posts(){

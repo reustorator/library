@@ -64,7 +64,7 @@
                     </thead>
                     <tbody>
                     @foreach ($materials as $material)
-                        <td><a href="#">{{ $material->name }}</a></td>
+                        <td><a href="{{ url('view-material/'.$material->id) }}">{{ $material->name }}</a></td>
                         <td>{{ $material->author }}</td>
                         <td>{{ $material->type }}</td>
                         <td>{{ $material->category }}</td>

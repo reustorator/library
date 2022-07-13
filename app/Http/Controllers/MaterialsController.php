@@ -29,7 +29,9 @@ class MaterialsController extends Controller
             'name',
             'author',
             'type',
-            'category'];
+            'category',
+            'description'
+        ];
         $searchMaterials = DB::table('materials')
             ->whereFullText($columns, $value)
             ->get();
@@ -47,7 +49,8 @@ class MaterialsController extends Controller
         $this->validate($request,[
             'name' => 'required',
             'type' => 'required',
-            'category' => 'required'
+            'category' => 'required',
+            'description' => 'required'
         ]);
         if($request->author != null){
             $author = $request->author;
@@ -60,6 +63,7 @@ class MaterialsController extends Controller
             'author' => $author,
             'type' => $request->type,
             'category' => $request->category,
+            'description' => $request->description,
             'created_at' => $request->created_at,
             'update_at' => $request->updated_at,
         ]);
@@ -80,6 +84,7 @@ class MaterialsController extends Controller
         $materials->author = $request->author;
         $materials->type = $request->type;
         $materials->category = $request->category;
+        $materials->description = $request->description;
         $materials->update();
         return redirect('list-materials')->with('status','Material Updated Successfully');
     }
@@ -88,5 +93,9 @@ class MaterialsController extends Controller
         $material = Materials::find($id);
         $material->delete();
         return redirect('list-materials')->with('status','Student Deleted Successfully');
+    }
+    public function viewMaterial($id){
+        $materials = Materials::find($id);
+        return view('view-material', ['materials' => $materials]);
     }
 }

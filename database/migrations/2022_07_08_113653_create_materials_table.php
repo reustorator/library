@@ -19,7 +19,8 @@ class CreateMaterialsTable extends Migration
             $table->char('author',255);
             $table->char('type',255);
             $table->char('category',255);
-            $table->fullText(['name','author','type','category'], 'FULLTEXT')->charset('utf8mb4_general_ci');
+            $table->char('description',255);
+            $table->fullText(['name','author','type','category','description'], 'FULLTEXT')->charset('utf8mb4_general_ci');
             $table->date('created_at');
             $table->date('updated_at');
         });
