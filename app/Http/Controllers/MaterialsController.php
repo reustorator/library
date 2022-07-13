@@ -83,4 +83,10 @@ class MaterialsController extends Controller
         $materials->update();
         return redirect('list-materials')->with('status','Material Updated Successfully');
     }
+    public function destroy($id)
+    {
+        $material = Materials::find($id);
+        $material->delete();
+        return redirect('list-materials')->with('status','Student Deleted Successfully');
+    }
 }

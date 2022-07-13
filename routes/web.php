@@ -40,3 +40,4 @@ Route::get('list-materials',[MaterialsController::class, 'index']);
 Route::post('materialsSearch',[MaterialsController::class, 'materialsSearch']);
 Route::get('edit-material/{id}',[MaterialsController::class, 'showUpdate']);
 Route::post('update-material/{id}', [MaterialsController::class, 'update']);
+Route::delete('delete-material/{id}', [MaterialsController::class, 'destroy']);
