@@ -69,16 +69,18 @@ class MaterialsController extends Controller
      * Редактирование материала
      */
     public function showUpdate($id) {
-        $materials = DB::table('materials where id = ?',[$id])->get();
+        $materials = Materials::find($id);
         return view('update-material', ['materials' => $materials]);
-    }
-    public function edit(Request $request,$id) {
-        $name = $request->name;
-        $author = $request->author;
-        $type = $request->type;
-        $category = $request->category;
 
-        DB::update('update student set name = ?, author = ?, type = ?, category = ?, where id = ?',[$name,$author,$type,$category,$id]);
-        return redirect('list-materials')->with('status', 'Материал обновлен');
+    }
+
+    public function update(Request $request,$id) {
+        $materials = Materials::find($id);
+        $materials->name = $request->name;
+        $materials->author = $request->author;
+        $materials->type = $request->type;
+        $materials->category = $request->category;
+        $materials->update();
+        return redirect('list-materials')->with('status','Material Updated Successfully');
     }
 }

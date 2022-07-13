@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MaterialsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,9 +34,9 @@ Route::get('list-category', function () {
 Route::get('view-materials', function () {
     return view('view-materials');
 });
-Route::get('create-material','App\Http\Controllers\MaterialsController@createView');
-Route::post('post-material','App\Http\Controllers\MaterialsController@insertMaterial');
-Route::get('list-materials','App\Http\Controllers\MaterialsController@index');
-Route::post('materialsSearch','App\Http\Controllers\MaterialsController@materialsSearch');
-Route::get('edit/{id}','App\Http\Controllers\MaterialsController@showUpdate');
-Route::post('edit/{id}','App\Http\Controllers\MaterialsController@edit');
+Route::get('create-material',[MaterialsController::class, 'createView']);
+Route::post('post-material',[MaterialsController::class, 'insertMaterial']);
+Route::get('list-materials',[MaterialsController::class, 'index']);
+Route::post('materialsSearch',[MaterialsController::class, 'materialsSearch']);
+Route::get('edit-material/{id}',[MaterialsController::class, 'showUpdate']);
+Route::post('update-material/{id}', [MaterialsController::class, 'update']);
