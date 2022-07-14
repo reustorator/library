@@ -32,9 +32,14 @@ class MaterialsController extends Controller
             'category',
             'description'
         ];
-        $searchMaterials = DB::table('materials')
-            ->whereFullText($columns, $value)
-            ->get();
+        if($value != null){
+            $searchMaterials = DB::table('materials')
+                ->whereFullText($columns,$value)
+                ->get();
+        }
+        else{
+            $searchMaterials = DB::table('materials')->get();
+        }
         return view('list-materials', ['materials' => $searchMaterials]);
     }
 
