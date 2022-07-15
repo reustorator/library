@@ -8,7 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 class MaterialsController extends Controller
 {
-
+    public $columnsMaterials = [
+        'name',
+        'author',
+        'type',
+        'category',
+        'description'
+    ];
     /**
      * Показать список всех пользователей приложения.
      */
@@ -25,21 +31,21 @@ class MaterialsController extends Controller
     public function materialsSearch(Request $request)
     {
         $value = $request->get('materialsSearch');
-        $columns = [
-            'name',
-            'author',
-            'type',
-            'category',
-            'description'
-        ];
+        $value = '%' . $value . '%';
         if($value != null){
             $searchMaterials = DB::table('materials')
-                ->whereFullText($columns,$value)
+                ->where('like',"{$value}")
+                ->orWhere('author','like',"{$value}")
+                ->orWhere('type','like',"{$value}")
+                ->orWhere('category','like',"{$value}")
+                ->orWhere('description','like',"{$value}")
+                ->orderBy('name')
                 ->get();
         }
         else{
             $searchMaterials = DB::table('materials')->get();
         }
+
         return view('list-materials', ['materials' => $searchMaterials]);
     }
 
