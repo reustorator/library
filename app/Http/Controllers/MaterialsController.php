@@ -31,22 +31,21 @@ class MaterialsController extends Controller
     public function materialsSearch(Request $request)
     {
         $value = $request->get('materialsSearch');
-        $value = '%' . $value . '%';
+       // $value = '%' . $value . '%';
         if($value != null){
             $searchMaterials = DB::table('materials')
-                ->where('like',"{$value}")
-                ->orWhere('author','like',"{$value}")
-                ->orWhere('type','like',"{$value}")
-                ->orWhere('category','like',"{$value}")
-                ->orWhere('description','like',"{$value}")
+                ->where('name','like',"{%$value%}")
+                ->orWhere('author','like',"{%$value%}")
+                ->orWhere('type','like',"{%$value%}")
+                ->orWhere('category','like',"{%$value%}")
+                ->orWhere('description','like',"{%$value%}")
                 ->orderBy('name')
                 ->get();
         }
         else{
             $searchMaterials = DB::table('materials')->get();
         }
-
-        return view('list-materials', ['materials' => $searchMaterials]);
+        return view('list-materials', ['materials' => $searchMaterials],['value' => $value]);
     }
 
     public function createView(){
