@@ -44,7 +44,7 @@
                         @method('POST')
                         <div class="form-floating mb-3">
                             <select class="form-select" id="floatingSelectType" name="type" required>
-                                <option>Выберите тип</option>
+                                <option value="">Выберите тип</option>
                                 <option value="Книга" <?php if($materials->type == 'Книга'): ?> selected="selected"<?php endif; ?>>Книга</option>
                                 <option value="Статья"<?php if($materials->type == 'Статья'): ?> selected="selected"<?php endif; ?>>Статья</option>
                                 <option value="Видео"<?php if($materials->type == 'Видео'): ?>selected="selected"<?php endif; ?>>Видео</option>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-floating mb-3">
                             <select class="form-select" id="floatingSelectCategory" name="category" required>
-                                <option>Выберите категорию</option>
+                                <option value="">Выберите категорию</option>
                                 <option value="Деловые/Бизнес-процессы"<?php if($materials->category == 'Деловые/Бизнес-процессы'): ?>selected="selected"<?php endif; ?>>Деловые/Бизнес-процессы</option>
                                 <option value="Деловые/Найм"<?php if($materials->category == 'Деловые/Найм'): ?>selected="selected"<?php endif; ?>>Деловые/Найм</option>
                                 <option value="Деловые/Реклама"<?php if($materials->category == 'Деловые/Реклама'): ?>selected="selected"<?php endif; ?>>Деловые/Реклама</option>

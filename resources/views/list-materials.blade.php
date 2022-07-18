@@ -41,7 +41,7 @@
             <a class="btn btn-primary mb-4" href="create-material" role="button">Добавить</a>
             <div class="row">
                 <div class="col-md-8">
-                    <form action="materialsSearch" method ="post">
+                    <form action="list-materials" method ="get">
                         @csrf
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder=""

@@ -43,7 +43,7 @@
                         @csrf
                         <div class="form-floating mb-3">
                             <select class="form-select" id="floatingSelectType" name="type" required>
-                                <option selected>Выберите тип</option>
+                                <option value="" selected>Выберите тип</option>
                                 <option value="Книга">Книга</option>
                                 <option value="Статья">Статья</option>
                                 <option value="Видео">Видео</option>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="form-floating mb-3">
                             <select class="form-select" id="floatingSelectCategory" name="category" required>
-                                <option selected>Выберите категорию</option>
+                                <option value="" selected>Выберите категорию</option>
                                 <option value="Деловые/Бизнес-процессы">Деловые/Бизнес-процессы</option>
                                 <option value="Деловые/Найм">Деловые/Найм</option>
                                 <option value="Деловые/Реклама">Деловые/Реклама</option>

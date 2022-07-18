@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Materials;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class MaterialsController extends Controller
 {
@@ -17,18 +18,10 @@ class MaterialsController extends Controller
     ];
     /**
      * Показать список всех пользователей приложения.
-     */
-    public function index()
-    {
-        $materials = DB::table('materials')->get();
-
-        return view('list-materials', ['materials' => $materials]);
-    }
-
-    /**
      * Поиск по пользователям
+     *
      */
-    public function materialsSearch(Request $request)
+    public function index(Request $request)
     {
         $value = $request->get('materialsSearch');
         $value = '%' . $value . '%';
@@ -48,7 +41,6 @@ class MaterialsController extends Controller
         $value = $request->get('materialsSearch');
         return view('list-materials', ['materials' => $searchMaterials],['value' => $value]);
     }
-
     public function createView(){
         return view('create-material');
     }
@@ -85,12 +77,18 @@ class MaterialsController extends Controller
      */
     public function showUpdate($id) {
         $materials = Materials::find($id);
+        if ($materials === null) {
+            throw new NotFoundHttpException("Материал не найден");
+        }
         return view('update-material', ['materials' => $materials]);
 
     }
 
     public function update(Request $request,$id) {
         $materials = Materials::find($id);
+        if ($materials === null) {
+            throw new NotFoundHttpException("Материал не найден");
+        }
         $materials->name = $request->name;
         $materials->author = $request->author;
         $materials->type = $request->type;
@@ -101,12 +99,18 @@ class MaterialsController extends Controller
     }
     public function destroy($id)
     {
-        $material = Materials::find($id);
-        $material->delete();
+        $materials = Materials::find($id);
+        if ($materials === null) {
+            throw new NotFoundHttpException("Материал не найден");
+        }
+        $materials->delete();
         return redirect('list-materials')->with('status','Student Deleted Successfully');
     }
     public function viewMaterial($id){
         $materials = Materials::find($id);
+        if ($materials === null) {
+            throw new NotFoundHttpException("Материал не найден");
+        }
         return view('view-material', ['materials' => $materials]);
     }
 }
