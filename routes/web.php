@@ -21,3 +21,7 @@ Route::get('edit-material/{id}',[MaterialsController::class, 'showUpdate']);
 Route::post('update-material/{id}', [MaterialsController::class, 'update']);
 Route::get('delete-material/{id}', [MaterialsController::class, 'destroy']);
 Route::get('view-material/{id}', [MaterialsController::class, 'viewMaterial']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
