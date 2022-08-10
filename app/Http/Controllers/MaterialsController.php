@@ -17,8 +17,8 @@ class MaterialsController extends Controller
         'description'
     ];
     /**
-     * Показать список всех пользователей приложения.
-     * Поиск по пользователям
+     *
+     * Поиск по материалам
      *
      */
     public function index(Request $request)
