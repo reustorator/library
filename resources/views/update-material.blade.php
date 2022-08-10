@@ -1,4 +1,4 @@
-<@include('layouts.header')
+@extends('layouts.header')
 @include('layouts.app')
         <div class="container">
             <h1 class="my-md-5 my-4">Добавить материал</h1>
@@ -6,7 +6,6 @@
                 <div class="col-lg-5 col-md-8">
                     <form action="{{ url('update-material/'.$materials->id) }}" method = "post">
                         @csrf
-                        @method('POST')
                         <div class="form-floating mb-3">
                             <select class="form-select" id="floatingSelectType" name="type" required>
                                 <option value="">Выберите тип</option>
@@ -71,4 +70,4 @@
             </div>
         </div>
     </div>
-@include('layouts.footer)
+@include('layouts.footer')
