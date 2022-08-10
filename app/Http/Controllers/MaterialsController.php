@@ -95,7 +95,7 @@ class MaterialsController extends Controller
         $materials->category = $request->category;
         $materials->description = $request->description;
         $materials->update();
-        return redirect('list-materials')->with('status','Material Updated Successfully');
+        return redirect('list-materials')->with('status','Материал успешно обновлен');
     }
     public function destroy($id)
     {
@@ -104,7 +104,7 @@ class MaterialsController extends Controller
             throw new NotFoundHttpException("Материал не найден");
         }
         $materials->delete();
-        return redirect('list-materials')->with('status','Student Deleted Successfully');
+        return redirect('list-materials')->with('status','Материал успешно удален');
     }
     public function viewMaterial($id){
         $materials = Materials::find($id);
