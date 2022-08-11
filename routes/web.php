@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MaterialsController;
 /*
@@ -21,7 +23,10 @@ Route::get('edit-material/{id}',[MaterialsController::class, 'showUpdate']);
 Route::post('update-material/{id}', [MaterialsController::class, 'update']);
 Route::get('delete-material/{id}', [MaterialsController::class, 'destroy']);
 Route::get('view-material/{id}', [MaterialsController::class, 'viewMaterial']);
+Route::get('list-category', [CategoryController::class, 'index']);
+Route::get('create-category', [CategoryController::class, 'createView']);
+Route::post('insertCategory',[CategoryController::class, 'insertCategory']);
+Route::post('update-category/{id}', [CategoryController::class, 'update']);
+Route::get('delete-category/{id}', [CategoryController::class, 'destroy']);
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

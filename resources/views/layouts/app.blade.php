@@ -15,9 +15,6 @@
                             <a class="nav-link active" aria-current="page" href="list-materials">Материалы</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="list-tag">Теги</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="list-category">Категории</a>
                         </li>
                         <!-- Authentication Links -->

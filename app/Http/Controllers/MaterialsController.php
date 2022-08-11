@@ -9,13 +9,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class MaterialsController extends Controller
 {
-    public $columnsMaterials = [
-        'name',
-        'author',
-        'type',
-        'category',
-        'description'
-    ];
     /**
      *
      * Поиск по материалам
