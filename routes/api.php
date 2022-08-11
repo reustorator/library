@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('materials/{id}', [MaterialApiController::class, 'show']);
-Route::post('materials', [MaterialApiController::class, 'store']);
+Route::post('materials/create', [MaterialApiController::class, 'store']);
 Route::put('materials/{id}', [MaterialApiController::class, 'update']);
 Route::delete('materials/{id}', [MaterialApiController::class, 'delete']);
 Route::get('materials', [MaterialApiController::class, 'index']);
